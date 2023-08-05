@@ -1,0 +1,31 @@
+.navbar-brand {
+  font-size: 35px;
+  margin-left: 500px;
+}
+form {
+  margin-top: 20px;
+}
+.form-control {
+  margin-left: 20px;
+}
+.border {
+  font-size: 30px;
+  padding: 150px;
+  padding-left: 250px;
+  margin-right: 50px;
+  float: right;
+}
+#week {
+  margin-top: 320px;
+  margin-left: 305px;
+  display: flex;
+  justify-content: space-between;
+}
+#day1,
+#day2,
+#day3,
+#day4,
+#day5 {
+  background-color: #6c757d;
+  padding-bottom: 100px;
+}

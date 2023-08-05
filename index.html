@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="Assets/css/style.css" />
+    <title>Weather Dashboard</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar bg-secondary justify-content-between">
+        <a class="navbar-brand">Weather Dashboard</a>
+      </nav>
+    </header>
+    <main>
+      <span class="border border-dark" id="todaysForecast"
+        >This is where Todays forcast will be</span>
+        <form class="form-inline"> 
+          <input
+            class="form-control mr-sm-2" id="day"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"/>
+          <button class="btn btn-primary my-2"  id="my-sm-0" type="submit">
+            Search
+          </button>
+        </form> 
+        <div class="container">
+  <div class="row" id="week">
+    <div class="col-2" id="day1">
+      One of five columns
+    </div>
+    <div class="col-2" id="day2">
+      One of five columns
+    </div>
+    <div class="col-2" id="day3">
+      One of five columns
+    </div>
+    <div class="col-2" id="day4">
+      One of five columns
+    </div>
+    <div class="col-2" id="day5">
+      One of five columns
+    </div>
+  </div>
+</div>
+    </main>
+  </body>
+  <script src="Assets/script/script.js"></script>
+</html>
