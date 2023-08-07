@@ -15,55 +15,64 @@
   <body>
     <header>
       <nav class="navbar bg-secondary justify-content-between">
-        <a class="navbar-brand">Weather Dashboard</a>
+        <div class="navbar-brand"><strong>Weather Dashboard</strong></div>
       </nav>
     </header>
     <main>
-      <span class="border border-dark" id="todaysForecast"
-        >This is where Todays forcast will be</span
-      >
+      <div class="border border-dark" id="todaysForecast"
+        ><ul>
+          <li class="city"><strong>Kissimmee</strong></li>
+          <li>Temp:</li>
+          <li>Wind:</li>
+          <li>Humidity</li>
+        </ul>
+      </div>
       <form class="form-inline">
         <input
           class="form-control mr-sm-2"
-          id="day"
+          id="inputtedCity"
           type="search"
           placeholder="Search"
           aria-label="Search"
         />
-        <button class="btn btn-primary my-2" id="my-sm-0" type="submit">
+        <button class="btn btn-primary my-2" id="my-sm-0 submitBtn" type="submit">
           Search
         </button>
       </form>
+      <div id="randomCities">
       <button type="button" class="btn btn-info" id="cityBtn">
-        random city
+        Atlanta
       </button>
       <button type="button" class="btn btn-info" id="cityBtn">
-        random city
+        Denver
       </button>
       <button type="button" class="btn btn-info" id="cityBtn">
-        random city
+        Seattle
       </button>
       <button type="button" class="btn btn-info" id="cityBtn">
-        random city
+       San Francisco
       </button>
       <button type="button" class="btn btn-info" id="cityBtn">
-        random city
+        Orlando
       </button>
       <button type="button" class="btn btn-info" id="cityBtn">
-        random city
+        New York
       </button>
       <button type="button" class="btn btn-info" id="cityBtn">
-        random city
+       Chicago
       </button>
-      <div class="container">
+      <button type="button" class="btn btn-info" id="cityBtn">
+       Austin
+      </button>
+    </div>
         <div class="row" id="week">
           <div class="col-2" id="day1">One of five columns</div>
           <div class="col-2" id="day2">One of five columns</div>
           <div class="col-2" id="day3">One of five columns</div>
           <div class="col-2" id="day4">One of five columns</div>
           <div class="col-2" id="day5">One of five columns</div>
-      </div>
     </main>
+    <div class="fiveDay">5 Day Forecast:</div>
   </body>
   <script src="Assets/script/script.js"></script>
 </html>
