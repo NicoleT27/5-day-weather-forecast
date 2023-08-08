@@ -12,17 +12,16 @@ form {
   padding: 60px;
   margin-right: 10px;
   padding-right: 770px;
-  /* padding-bottom: 300px; */
+  padding-bottom: 10px;
   float: right;
   border-radius: 10px;
 }
-#todaysForecast{
+#todaysForecast {
   margin-left: 10px;
   font-weight: 700;
-
 }
 #week {
-  margin-top: -150px;
+  margin-top: -230px;
   margin-left: 355px;
   display: flex;
   justify-content: space-between;
@@ -36,6 +35,9 @@ form {
   background-color: #6c757d;
   padding-bottom: 100px;
   border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+  color: black;
 }
 #cityBtn {
   display: flex;
@@ -48,7 +50,7 @@ form {
   font-size: 20px;
   font-weight: bolder;
   text-align: center;
-  margin-top: -260px;
+  margin-top: -350px;
   margin-left: 400px;
 }
 ul li {
@@ -60,4 +62,11 @@ ul li {
   margin-bottom: 30px;
   font-weight: bolder;
   font-size: 20px;
+}
+#weeklyForecast {
+  margin-left: 35px;
+  margin-top: 20px;
+  text-align: left;
+}
+#currentDate {
 }

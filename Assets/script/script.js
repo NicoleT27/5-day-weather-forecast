@@ -10,16 +10,19 @@ var temp = document.getElementById("temp");
 var wind = document.getElementById("wind");
 var humidity = document.getElementById("humidity");
 var button = document.getElementById("cityBtn");
+var icon = document.getElementById("icon");
+var dayOfWeek = document.getElementById("week");
+var currentDate =document.getElementById("currentDate");
+var today = dayjs();
+
 
 // The event listener will only be envoked when the element being clicked
 // is identified as a button to avoid envoking a button by clicking elsewhere
 // on page
 cityBtns.addEventListener("click", function (event) {
-    if (event.target.classList.contains("btn")) {
+  if (event.target.classList.contains("btn")) {
     city.innerHTML = event.target.innerText;
-    // temp.innerHTML = Math.round(data.main.temp);
-    // wind.innerHTML = Math.round(data.wind.speed);
-    // humidity.innerHTML = Math.round(data.main.humidity);
+    getCurrentWeather(event.target.innerText);
   }
 });
 
@@ -31,14 +34,12 @@ form.addEventListener("submit", function (event) {
   var input = userInput.value;
   console.log(input);
   city.innerHTML = input;
-  getCurrentWeather();
+  getCurrentWeather(userInput.value);
 });
 
 // The function is fetching the weather api data via json to display current
 // weather statistics
-function getCurrentWeather() {
-  var input = userInput.value;
-  var city = input;
+function getCurrentWeather(city) {
   var currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
   fetch(currentWeatherUrl)
     .then((response) => response.json())
@@ -46,5 +47,9 @@ function getCurrentWeather() {
       temp.innerHTML = Math.round(data.main.temp);
       wind.innerHTML = Math.round(data.wind.speed);
       humidity.innerHTML = Math.round(data.main.humidity);
+      icon.setAttribute(
+        "src",
+        `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
+      );
     });
 }

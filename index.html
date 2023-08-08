@@ -35,6 +35,8 @@
             %
           </li>
         </ul>
+        <img id="icon" src=""/>
+         <div id="currentDate">Date:</div>
       </div>
       <form class="form-inline">
         <input
@@ -76,13 +78,99 @@
       </button>
     </div>
         <div class="row" id="week">
-          <div class="col-2" id="day1">One of five columns</div>
-          <div class="col-2" id="day2">One of five columns</div>
-          <div class="col-2" id="day3">One of five columns</div>
-          <div class="col-2" id="day4">One of five columns</div>
-          <div class="col-2" id="day5">One of five columns</div>
+          <div class="col-2" id="day1">
+            Monday
+            <img id="icon" src=""/>
+            <ul id="weeklyForecast">
+            <li>Temp:
+            <span id="temp"></span>
+            °F
+          </li>
+          <li>Wind:
+            <span id="wind"></span>
+            MPH
+          </li>
+          <li>Humidity:
+            <span id="humidity"></span>
+            %
+          </li>
+            </ul>
+          </div>
+          <div class="col-2" id="day2">
+            Tuesday
+            <img id="icon" src=""/>
+           <ul id="weeklyForecast">
+            <li>Temp:
+            <span id="temp"></span>
+            °F
+          </li>
+          <li>Wind:
+            <span id="wind"></span>
+            MPH
+          </li>
+          <li>Humidity:
+            <span id="humidity"></span>
+            %
+          </li>
+            </ul></div>
+          <div class="col-2" id="day3">
+            Wednesday
+            <img id="icon" src=""/> 
+            <ul id="weeklyForecast">
+            <li>Temp:
+            <span id="temp"></span>
+            °F
+          </li>
+          <li>Wind:
+            <span id="wind"></span>
+            MPH
+          </li>
+          <li>Humidity:
+            <span id="humidity"></span>
+            %
+          </li>
+            </ul></div>
+          <div class="col-2" id="day4">
+            Thursday
+            <img id="icon" src=""/> 
+            <ul id="weeklyForecast">
+            <li>Temp:
+            <span id="temp"></span>
+            °F
+          </li>
+          <li>Wind:
+            <span id="wind"></span>
+            MPH
+          </li>
+          <li>Humidity:
+            <span id="humidity"></span>
+            %
+          </li>
+            </ul></div>
+          <div class="col-2" id="day5">
+            Friday
+            <img id="icon" src=""/> 
+            <ul id="weeklyForecast">
+            <li>Temp:
+            <span id="temp"></span>
+            °F
+          </li>
+          <li>Wind:
+            <span id="wind"></span>
+            MPH
+          </li>
+          <li>Humidity:
+            <span id="humidity"></span>
+            %
+          </li>
+            </ul></div>
     </main>
     <div class="fiveDay">5 Day Forecast:</div>
   </body>
+  <script
+      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+      crossorigin="anonymous"
+    ></script>
   <script src="Assets/script/script.js"></script>
 </html>
