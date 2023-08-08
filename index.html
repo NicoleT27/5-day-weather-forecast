@@ -19,12 +19,21 @@
       </nav>
     </header>
     <main>
-      <div class="border border-dark" id="todaysForecast"
-        ><ul>
-          <li class="city"><strong>Kissimmee</strong></li>
-          <li>Temp:</li>
-          <li>Wind:</li>
-          <li>Humidity</li>
+      <div class="border border-dark">
+        <ul id="todaysForecast">
+          <li id="city"><strong>Kissimmee</strong></li>
+          <li>Temp:
+            <span id="temp"></span>
+            °F
+          </li>
+          <li>Wind:
+            <span id="wind"></span>
+            MPH
+          </li>
+          <li>Humidity:
+            <span id="humidity"></span>
+            %
+          </li>
         </ul>
       </div>
       <form class="form-inline">
@@ -39,11 +48,12 @@
           Search
         </button>
       </form>
+
       <div id="randomCities">
-      <button type="button" class="btn btn-info" id="cityBtn">
+      <button type="button" class="btn btn-info " id="cityBtn">
         Atlanta
       </button>
-      <button type="button" class="btn btn-info" id="cityBtn">
+      <button type="button" class="btn btn-info " id="cityBtn">
         Denver
       </button>
       <button type="button" class="btn btn-info" id="cityBtn">

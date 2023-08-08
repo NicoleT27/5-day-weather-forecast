@@ -9,16 +9,21 @@ form {
   margin-left: 20px;
 }
 .border {
-  font-size: 30px;
   padding: 60px;
-  margin-right: 25px;
-  padding-right: 710px;
+  margin-right: 10px;
+  padding-right: 770px;
+  /* padding-bottom: 300px; */
   float: right;
   border-radius: 10px;
 }
+#todaysForecast{
+  margin-left: 10px;
+  font-weight: 700;
+
+}
 #week {
-  margin-top: -135px;
-  margin-left: 370px;
+  margin-top: -150px;
+  margin-left: 355px;
   display: flex;
   justify-content: space-between;
   width: 70%;
@@ -43,14 +48,16 @@ form {
   font-size: 20px;
   font-weight: bolder;
   text-align: center;
-  margin-top: -240px;
-  margin-left: 370px;
+  margin-top: -260px;
+  margin-left: 400px;
 }
 ul li {
   list-style: none;
   margin-left: -70px;
 }
-.city{
+#city {
   margin-top: -20px;
   margin-bottom: 30px;
+  font-weight: bolder;
+  font-size: 20px;
 }
