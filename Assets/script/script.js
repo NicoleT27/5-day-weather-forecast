@@ -12,9 +12,8 @@ var humidity = document.getElementById("humidity");
 var button = document.getElementById("cityBtn");
 var icon = document.getElementById("icon");
 var dayOfWeek = document.getElementById("week");
-var currentDate =document.getElementById("currentDate");
+var currentDate = document.getElementById("currentDate");
 var today = dayjs();
-
 
 // The event listener will only be envoked when the element being clicked
 // is identified as a button to avoid envoking a button by clicking elsewhere
@@ -22,6 +21,8 @@ var today = dayjs();
 cityBtns.addEventListener("click", function (event) {
   if (event.target.classList.contains("btn")) {
     city.innerHTML = event.target.innerText;
+    currentDate.innerHTML = today.format(" dddd MMMM D YYYY" + " " + "hh:mm a");
+    console.log(currentDate.innerHTML);
     getCurrentWeather(event.target.innerText);
   }
 });
@@ -32,8 +33,9 @@ cityBtns.addEventListener("click", function (event) {
 form.addEventListener("submit", function (event) {
   event.preventDefault();
   var input = userInput.value;
-  console.log(input);
   city.innerHTML = input;
+  currentDate.innerHTML = today.format(" dddd MMMM D YYYY" + " " + "hh:mm a");
+  console.log(currentDate.innerHTML);
   getCurrentWeather(userInput.value);
 });
 

@@ -69,4 +69,5 @@ ul li {
   text-align: left;
 }
 #currentDate {
+  margin-left:-70px;
 }
