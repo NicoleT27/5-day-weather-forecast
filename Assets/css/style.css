@@ -2,22 +2,15 @@
   font-size: 35px;
   margin-left: 500px;
 }
+.border{
+margin-left: 355px;
+padding-top:30px;
+}
 form {
-  margin-top: 20px;
-}
-.form-control {
-  margin-left: 20px;
-}
-.border {
-  padding: 60px;
-  margin-right: 10px;
-  padding-right: 770px;
-  padding-bottom: 10px;
-  float: right;
-  border-radius: 10px;
+  margin-top: -235px;
 }
 #todaysForecast {
-  margin-left: 10px;
+  margin-left: 330px;
   font-weight: 700;
 }
 #week {
@@ -44,14 +37,13 @@ form {
   flex-direction: column;
   margin-top: 20px;
   width: 23%;
-  margin-left: 20px;
 }
 .fiveDay {
   font-size: 20px;
   font-weight: bolder;
-  text-align: center;
-  margin-top: -350px;
-  margin-left: 400px;
+ text-align: center;
+ margin-left: 320px;
+ margin-top: -300px;
 }
 ul li {
   list-style: none;
@@ -59,15 +51,16 @@ ul li {
 }
 #city {
   margin-top: -20px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   font-weight: bolder;
   font-size: 20px;
 }
+
 #weeklyForecast {
   margin-left: 35px;
   margin-top: 20px;
   text-align: left;
 }
 #currentDate {
-  margin-left:-70px;
+  margin-left: -70px;
 }
