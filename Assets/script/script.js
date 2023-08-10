@@ -6,13 +6,15 @@ var apiKey = "7e3cc4b2e42426350ec91e0f5579fa07";
 var form = document.querySelector("form");
 var userInput = document.getElementById("inputtedCity");
 var city = document.getElementById("city");
-var temp = document.getElementById("temp");
-var wind = document.getElementById("wind");
-var humidity = document.getElementById("humidity");
+var temp = document.querySelectorAll(".temp");
+var wind = document.querySelectorAll(".wind");
+var humidity = document.querySelectorAll(".humidity");
 var button = document.getElementById("cityBtn");
 var icon = document.getElementById("icon");
 var dayOfWeek = document.getElementById("week");
 var currentDate = document.getElementById("currentDate");
+// var day = document.querySelectorAll(".day");
+
 var today = dayjs();
 
 // The event listener will only be envoked when the element being clicked
@@ -22,8 +24,8 @@ cityBtns.addEventListener("click", function (event) {
   if (event.target.classList.contains("btn")) {
     city.innerHTML = event.target.innerText;
     currentDate.innerHTML = today.format(" dddd MMMM D YYYY" + " " + "hh:mm a");
-    console.log(currentDate.innerHTML);
     getCurrentWeather(event.target.innerText);
+    getDailyForecast(city.innerHTML);
   }
 });
 
@@ -35,8 +37,8 @@ form.addEventListener("submit", function (event) {
   var input = userInput.value;
   city.innerHTML = input;
   currentDate.innerHTML = today.format(" dddd MMMM D YYYY" + " " + "hh:mm a");
-  console.log(currentDate.innerHTML);
   getCurrentWeather(userInput.value);
+  getDailyForecast(city.innerHTML);
 });
 
 // The function is fetching the weather api data via json to display current
@@ -53,5 +55,26 @@ function getCurrentWeather(city) {
         "src",
         `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
       );
+    });
+}
+
+function getDailyForecast(city) {
+  var dailyForecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=6&appid=${apiKey}&units=imperial`;
+  fetch(dailyForecastUrl)
+    .then((response) => response.json())
+    .then((data) => {
+      console.log(data);
+
+      for (var i = 0; i < data.list.length; i++) {
+        var days = data.list[i];
+        // console.log(Math.round(days.main.temp));
+        //  temp.innerHTML = Math.round(days.main.temp);
+
+          data.list.forEach(function () {
+            var weeklyForecast = document.getElementById("weeklyForecast" + i);
+            var eachDay = weeklyForecast.parentElement.getAttribute("id");
+             console.log(eachDay);
+          });
+      }
     });
 }

@@ -2,15 +2,15 @@
   font-size: 35px;
   margin-left: 500px;
 }
-.border{
-margin-left: 355px;
-padding-top:30px;
+.border {
+  margin-left: 355px;
+  padding-top: 30px;
 }
 form {
   margin-top: -235px;
 }
 #todaysForecast {
-  margin-left: 330px;
+  margin-left: 60px;
   font-weight: 700;
 }
 #week {
@@ -41,9 +41,9 @@ form {
 .fiveDay {
   font-size: 20px;
   font-weight: bolder;
- text-align: center;
- margin-left: 320px;
- margin-top: -300px;
+  text-align: center;
+  margin-left: 320px;
+  margin-top: -300px;
 }
 ul li {
   list-style: none;
