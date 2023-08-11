@@ -6,9 +6,9 @@ var apiKey = "7e3cc4b2e42426350ec91e0f5579fa07";
 var form = document.querySelector("form");
 var userInput = document.getElementById("inputtedCity");
 var city = document.getElementById("city");
-var temp = document.querySelectorAll(".temp");
-var wind = document.querySelectorAll(".wind");
-var humidity = document.querySelectorAll(".humidity");
+var temp = document.getElementById("temp");
+var wind = document.getElementById("wind");
+var humidity = document.getElementById("humidity");
 var button = document.getElementById("cityBtn");
 var icon = document.getElementById("icon");
 var dayOfWeek = document.getElementById("week");
@@ -48,9 +48,9 @@ function getCurrentWeather(city) {
   fetch(currentWeatherUrl)
     .then((response) => response.json())
     .then((data) => {
-      temp.innerHTML = Math.round(data.main.temp);
-      wind.innerHTML = Math.round(data.wind.speed);
-      humidity.innerHTML = Math.round(data.main.humidity);
+      mainTemp.innerHTML = Math.round(data.main.temp);
+      mainWind.innerHTML = Math.round(data.wind.speed);
+      mainHumidity.innerHTML = Math.round(data.main.humidity);
       icon.setAttribute(
         "src",
         `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
@@ -63,18 +63,29 @@ function getDailyForecast(city) {
   fetch(dailyForecastUrl)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
+      // console.log(data);
 
-      for (var i = 0; i < data.list.length; i++) {
+      for (var i = 0; i < 5; i++) {
+        // console.log(data.list.length);
         var days = data.list[i];
-        // console.log(Math.round(days.main.temp));
-        //  temp.innerHTML = Math.round(days.main.temp);
 
-          data.list.forEach(function () {
-            var weeklyForecast = document.getElementById("weeklyForecast" + i);
-            var eachDay = weeklyForecast.parentElement.getAttribute("id");
-             console.log(eachDay);
-          });
+        // grab the temp and console log it
+        // console.log(Math.round(days.main.temp));
+
+        var weeklyForecast = document.getElementById(
+          "weeklyForecast" + (i + 1)
+        );
+
+        var eachDay = weeklyForecast.parentElement.getAttribute("id");
+        console.log(eachDay);
+        console.log(Math.round(days.main.temp));
+          var temp = weeklyForecast.querySelector("#temp");
+          var wind = weeklyForecast.querySelector("#wind");
+          var humidity = weeklyForecast.querySelector("#humidity");
+
+          temp.innerHTML = Math.round (days.main.temp);
+          wind.innerHTML = Math.round(days.wind.speed);
+          humidity.innerHTML= Math.round(days.main.humidity);
       }
     });
 }
