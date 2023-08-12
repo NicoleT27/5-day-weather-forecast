@@ -60,42 +60,39 @@ function getCurrentWeather(city) {
 }
 
 function getDailyForecast(city) {
-  var coordinates = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=1&appid=${apiKey}`;
-  fetch(coordinates)
+  var dailyForecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=5&appid=${apiKey}&units=imperial`;
+ 
+  fetch(dailyForecastUrl)
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
-  // var dailyForecastUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${data.lat}&lon=${data.lon}&appid=${apiKey}&units=imperial`;
-  // https: fetch(dailyForecastUrl)
-  //   .then((response) => response.json())
-  //   .then((data) => {
-  //     console.log(data);
-      //       for (var i = 0; i < 5; i++) {
-      //         var days = data.list[i];
+      for (var i = 0; i < 5; i++) {
+        var days = data.list[i];
 
-      //         // grab the temp and console log it
-      //         var weeklyForecast = document.getElementById(
-      //           "weeklyForecast" + (i + 1)
-      //         );
+        // grab the temp and console log it
+        var weeklyForecast = document.getElementById(
+          "weeklyForecast" + (i + 1)
+        );
 
-      //         var eachDay = weeklyForecast.parentElement.getAttribute("id");
-      //         eachDay.innerHTML = days.dt_txt;
-      //         console.log(days.dt_txt);
-      //         // console.log(eachDay);
-      //         // console.log(Math.round(days.main.temp));
-      //         var temp = weeklyForecast.querySelector("#temp");
-      //         var wind = weeklyForecast.querySelector("#wind");
-      //         var humidity = weeklyForecast.querySelector("#humidity");
+        var eachDay = weeklyForecast.parentElement.getAttribute("id");
+        eachDay.innerHTML = days.dt_txt;
+        console.log(days.dt_txt);
+        // console.log(eachDay);
+        // console.log(Math.round(days.main.temp));
+        var temp = weeklyForecast.querySelector("#temp");
+        var wind = weeklyForecast.querySelector("#wind");
+        var humidity = weeklyForecast.querySelector("#humidity");
 
-      //         temp.innerHTML = Math.round(days.main.temp);
-      //         wind.innerHTML = Math.round(days.wind.speed);
-      //         humidity.innerHTML = Math.round(days.main.humidity);
-
-      //         var dailyIcon = document.getElementById("dailyIcon" + (i + 1));
-      //         dailyIcon.setAttribute(
-      //           "src",
-      //           `https://openweathermap.org/img/wn/${days.weather[0].icon}@2x.png`
-      //         );
-      //       }
+        temp.innerHTML = Math.round(days.main.temp);
+        wind.innerHTML = Math.round(days.wind.speed);
+        humidity.innerHTML = Math.round(days.main.humidity);
+        
+         var dailyIcon = document.getElementById(
+           "dailyIcon" + (i + 1)
+         );
+        dailyIcon.setAttribute(
+          "src",
+          `https://openweathermap.org/img/wn/${days.weather[0].icon}@2x.png`
+        );
+      }
     });
 }
