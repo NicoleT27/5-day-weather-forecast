@@ -60,24 +60,28 @@ function getCurrentWeather(city) {
 }
 
 function getDailyForecast(city) {
-  var dailyForecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&cnt=5&appid=${apiKey}&units=imperial`;
- 
+  var dailyForecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=imperial`;
+
   fetch(dailyForecastUrl)
     .then((response) => response.json())
     .then((data) => {
-      for (var i = 0; i < 5; i++) {
+      // console.log(data.list[0])
+      // console.log(data.list[8]);
+      // console.log(data.list[16]);
+      // console.log(data.list[24]);
+      // console.log(data.list[32]);
+      for (var i = 0; i < data.list.length; i+=8) {
         var days = data.list[i];
-
-        // grab the temp and console log it
+        console.log(days);
+   
         var weeklyForecast = document.getElementById(
           "weeklyForecast" + (i + 1)
         );
 
         var eachDay = weeklyForecast.parentElement.getAttribute("id");
-        eachDay.innerHTML = days.dt_txt;
-        console.log(days.dt_txt);
-        // console.log(eachDay);
-        // console.log(Math.round(days.main.temp));
+        
+        console.log(eachDay);
+       
         var temp = weeklyForecast.querySelector("#temp");
         var wind = weeklyForecast.querySelector("#wind");
         var humidity = weeklyForecast.querySelector("#humidity");
@@ -85,10 +89,8 @@ function getDailyForecast(city) {
         temp.innerHTML = Math.round(days.main.temp);
         wind.innerHTML = Math.round(days.wind.speed);
         humidity.innerHTML = Math.round(days.main.humidity);
-        
-         var dailyIcon = document.getElementById(
-           "dailyIcon" + (i + 1)
-         );
+
+        var dailyIcon = document.getElementById("dailyIcon" + (i + 1));
         dailyIcon.setAttribute(
           "src",
           `https://openweathermap.org/img/wn/${days.weather[0].icon}@2x.png`
