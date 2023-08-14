@@ -70,17 +70,19 @@ function getDailyForecast(city) {
       // console.log(data.list[16]);
       // console.log(data.list[24]);
       // console.log(data.list[32]);
+      var index = 1;
       for (var i = 0; i < data.list.length; i+=8) {
         var days = data.list[i];
         console.log(days);
+        // console.log(data.list.length);
    
         var weeklyForecast = document.getElementById(
-          "weeklyForecast" + (i + 1)
+          "weeklyForecast" + (index)
         );
 
         var eachDay = weeklyForecast.parentElement.getAttribute("id");
         
-        console.log(eachDay);
+        // console.log(eachDay);
        
         var temp = weeklyForecast.querySelector("#temp");
         var wind = weeklyForecast.querySelector("#wind");
@@ -90,11 +92,12 @@ function getDailyForecast(city) {
         wind.innerHTML = Math.round(days.wind.speed);
         humidity.innerHTML = Math.round(days.main.humidity);
 
-        var dailyIcon = document.getElementById("dailyIcon" + (i + 1));
+        var dailyIcon = document.getElementById("dailyIcon" + index);
         dailyIcon.setAttribute(
           "src",
           `https://openweathermap.org/img/wn/${days.weather[0].icon}@2x.png`
         );
+        index++;
       }
     });
 }
