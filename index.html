@@ -13,12 +13,15 @@
     <title>Weather Dashboard</title>
   </head>
   <body>
+    <!-- The header contains the navbar which only holds the name of the application -->
     <header>
-      <nav class="navbar bg-secondary justify-content-between">
+      <nav class="navbar bg-secondary">
         <div class="navbar-brand"><strong>Weather Dashboard</strong></div>
       </nav>
     </header>
     <main>
+      <!-- The section container below is in charge of holding all of the current weather forecast information for
+      that exact day -->
      <section class="container my-5 border border-dark">
     <div class="row ">
         <ul id="todaysForecast">
@@ -40,6 +43,8 @@
         <img id="icon" src=""/>
       </div>
       </section>
+      <!-- There is also a search input box with search button for the user to input whatever city they would like to view. When clicked
+         it will show the current weather for that day as well as generate the forecast weather  -->
      <div class="col-12">
       <form class="form-inline">
         <input
@@ -53,6 +58,9 @@
           Search
         </button>
       </form>
+      <!-- In case they dont have a specific city in mind they are able to click through the diffrent options of the
+      most commonly searched cities to help give them a starting point.When clicked it will show the current weather for that day
+    as well as generate the forecast weather -->
       <div id="randomCities">
       <button type="button" class="btn btn-info " id="cityBtn">
         Atlanta
@@ -80,6 +88,8 @@
       </button>
     </div>
     </div>
+    <!-- Each city chosen whether it was clicked or inputted will follow the same format of temp, wind, humidity, and an icon of 
+    the weather for the following 5 day forecast. -->
         <div class="row week" id="week">
           <div class="col-2"id="day1">
             Monday
