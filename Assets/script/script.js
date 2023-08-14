@@ -27,6 +27,9 @@ cityBtns.addEventListener("click", function (event) {
     currentDate.innerHTML = today.format(" dddd MMMM D YYYY" + " " + "hh:mm a");
     getCurrentWeather(event.target.innerText);
     getDailyForecast(city.innerHTML);
+    var cityChosen = city.innerHTML;
+    var location = this.getAttribute("id");
+    localStorage.setItem(location, cityChosen);
   }
 });
 
@@ -40,6 +43,9 @@ form.addEventListener("submit", function (event) {
   currentDate.innerHTML = today.format(" dddd MMMM D YYYY" + " " + "hh:mm a");
   getCurrentWeather(userInput.value);
   getDailyForecast(city.innerHTML);
+  var cityChosen = city.innerHTML;
+  var location = cityBtns.getAttribute("id");
+  localStorage.setItem(location, cityChosen);
 });
 
 // The function is fetching the weather api data via json to display current
@@ -71,19 +77,14 @@ function getDailyForecast(city) {
       // console.log(data.list[24]);
       // console.log(data.list[32]);
       var index = 1;
-      for (var i = 0; i < data.list.length; i+=8) {
+      for (var i = 0; i < data.list.length; i += 8) {
         var days = data.list[i];
         console.log(days);
-        // console.log(data.list.length);
-   
-        var weeklyForecast = document.getElementById(
-          "weeklyForecast" + (index)
-        );
+
+        var weeklyForecast = document.getElementById("weeklyForecast" + index);
 
         var eachDay = weeklyForecast.parentElement.getAttribute("id");
-        
-        // console.log(eachDay);
-       
+
         var temp = weeklyForecast.querySelector("#temp");
         var wind = weeklyForecast.querySelector("#wind");
         var humidity = weeklyForecast.querySelector("#humidity");
