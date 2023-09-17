@@ -4,7 +4,7 @@ Weather dashboard
 
 ## Description
 
-This webpage allows the user to input their city of choice or select a common city from the side menu and it will display the current temperature, wind speed humidty percentage as well as icon. It will also provide the 5 day forecast for that selected city and their details as well.
+This webpage allows the user to input their city of choice or select a common city from the side menu and it will display the current temperature, wind, speed, humidty percentage and icon. It will also provide the 5 day forecast for that selected city and their details as well.
 
 ## Usage
 
@@ -18,4 +18,4 @@ Once the user has clicked the common city or inputed their prefered city the pag
 ![Generating Forecast](/Assets/images/forecast-screenshot.jpg)
 
 Link to application:
-<a href="">Github Pages</a>
+<a href="https://nicolet27.github.io/5-day-weather-forecast/">Github Pages</a>
