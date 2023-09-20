@@ -4,7 +4,7 @@ Weather dashboard
 
 ## Description
 
-This webpage allows the user to input their city of choice or select a common city from the side menu and it will display the current temperature, wind, speed, humidty percentage and icon. It will also provide the 5 day forecast for that selected city and their details as well.
+This webpage allows the user to input their city of choice or select a common city from the side menu and it will display the current temperature, wind, speed, humidity percentage and icon. It will also provide the 5 day forecast for that selected city and their details as well.
 
 ## Usage
 
