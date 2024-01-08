@@ -4,7 +4,7 @@ A Weather Dashboard that displays a city that is inputted by the user or chosen 
 
 ## Description
 
-This webpage allows the user to input their city of choice or select a common city from the side menu and it will display the current temperature, wind, speed, humidity percentage and icon. It will also provide the five-day forecast for that selected city and their details.
+This webpage allows the user to input their city of choice or select a common city from the side menu and it will display the current temperature, wind, speed, humidity percentage, and icon. It will also provide the five-day forecast for that selected city and their details.
 
 ## Table of Contents
 - [Description](#description)
@@ -17,6 +17,7 @@ This webpage allows the user to input their city of choice or select a common ci
   ## Badges
 ![JavaScript](https://img.shields.io/badge/JavaScript-yellow.svg)
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
 ![github](https://img.shields.io/badge/github-Profile-lightgrey.svg)
 ![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white)
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
